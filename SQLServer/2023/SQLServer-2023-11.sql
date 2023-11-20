@@ -1,5 +1,5 @@
 CREATE TABLE apis (
-	apiid int NOT NULL,
+	apiid int IDENTITY(1,1) NOT NULL,
 	technology varchar(30),
 	baseurllocation varchar(99),
 	apiname varchar(79),
@@ -12,7 +12,7 @@ CREATE TABLE apis (
 	PRIMARY KEY (apiid)
 );
 CREATE TABLE databuilt_datastructues (
-	datastructurecoreid int NOT NULL,
+	datastructurecoreid int IDENTITY(1,1) NOT NULL,
 	datastructurename varchar(29),
 	datastructuredetails text,
 	createddate datetime,
@@ -21,7 +21,7 @@ CREATE TABLE databuilt_datastructues (
 	PRIMARY KEY (datastructurecoreid)
 );
 CREATE TABLE dataexisting_ababanking (
-	ababankingid int NOT NULL,
+	ababankingid int IDENTITY(1,1) NOT NULL,
 	routingnumber varchar(9),
 	telegraphicname varchar(20),
 	customername varchar(36),
@@ -35,7 +35,7 @@ CREATE TABLE dataexisting_ababanking (
 	PRIMARY KEY (ababankingid)
 );
 CREATE TABLE dataexisting_areacode (
-	areacodeid int NOT NULL,
+	areacodeid int IDENTITY(1,1) NOT NULL,
 	areacodevalue varchar(3) NOT NULL,
 	timezone varchar(3),
 	statecode varchar(2),
@@ -54,7 +54,7 @@ CREATE TABLE dataexisting_areacodeintl (
 	PRIMARY KEY (iddcode)
 );
 CREATE TABLE dataexisting_companies (
-	companiesid int NOT NULL,
+	companiesid int IDENTITY(1,1) NOT NULL,
 	companyname varchar(79),
 	createddate datetime,
 	statusid int,
@@ -63,7 +63,7 @@ CREATE TABLE dataexisting_companies (
 	PRIMARY KEY (companiesid)
 );
 CREATE TABLE dataexisting_namefirst (
-	firstnameid int NOT NULL,
+	firstnameid int IDENTITY(1,1) NOT NULL,
 	firstname varchar(39),
 	gender varchar(1),
 	statusid int,
@@ -73,7 +73,7 @@ CREATE TABLE dataexisting_namefirst (
 	PRIMARY KEY (firstnameid)
 );
 CREATE TABLE dataexisting_namelast (
-	lastnameid int NOT NULL,
+	lastnameid int IDENTITY(1,1) NOT NULL,
 	lastname varchar(69),
 	statusid int NOT NULL,
 	createddate datetime,
@@ -82,7 +82,7 @@ CREATE TABLE dataexisting_namelast (
 	PRIMARY KEY (lastnameid)
 );
 CREATE TABLE dataexisting_profession (
-	professionid int NOT NULL,
+	professionid int IDENTITY(1,1) NOT NULL,
 	professionname varchar(149),
 	statusid int,
 	createddate datetime,
@@ -91,7 +91,7 @@ CREATE TABLE dataexisting_profession (
 	PRIMARY KEY (professionid)
 );
 CREATE TABLE dataexisting_upccodes (
-	upccodeid int NOT NULL,
+	upccodeid int IDENTITY(1,1) NOT NULL,
 	upccodename varchar(15),
 	upcproductname varchar(150),
 	createddate datetime,
@@ -100,7 +100,7 @@ CREATE TABLE dataexisting_upccodes (
 	PRIMARY KEY (upccodeid)
 );
 CREATE TABLE dataexisting_zipcodeintl (
-	zipcodeintnlid int NOT NULL,
+	zipcodeintnlid int IDENTITY(1,1) NOT NULL,
 	zipcode char(10) NOT NULL,
 	zipcodetype varchar(15),
 	city varchar(75),
@@ -115,7 +115,7 @@ CREATE TABLE dataexisting_zipcodeintl (
 	PRIMARY KEY (zipcodeintnlid)
 );
 CREATE TABLE dataexisting_zipcodeus (
-	zipcodeid int NOT NULL,
+	zipcodeid int IDENTITY(1,1) NOT NULL,
 	zipcode char(5) NOT NULL,
 	zipcodetype varchar(15),
 	city varchar(75),
@@ -130,7 +130,7 @@ CREATE TABLE dataexisting_zipcodeus (
 	PRIMARY KEY (zipcodeid)
 );
 CREATE TABLE datagenerated_accountnumbers (
-	accountnumbersid int NOT NULL,
+	accountnumbersid int IDENTITY(1,1) NOT NULL,
 	accountnumbervalue varchar(20),
 	createddate datetime,
 	createduser varchar(20),
@@ -140,7 +140,7 @@ CREATE TABLE datagenerated_accountnumbers (
 	PRIMARY KEY (accountnumbersid)
 );
 CREATE TABLE datagenerated_addresses (
-	addressid int NOT NULL,
+	addressid int IDENTITY(1,1) NOT NULL,
 	addressstreet varchar(99),
 	addressstreet2 varchar(59),
 	createddate datetime,
@@ -151,7 +151,7 @@ CREATE TABLE datagenerated_addresses (
 	PRIMARY KEY (addressid)
 );
 CREATE TABLE datagenerated_bankaccount (
-	bankaccountsid int NOT NULL,
+	bankaccountsid int IDENTITY(1,1) NOT NULL,
 	bankaccountvalue varchar(17),
 	createddate datetime,
 	statusid int,
@@ -161,7 +161,7 @@ CREATE TABLE datagenerated_bankaccount (
 	PRIMARY KEY (bankaccountsid)
 );
 CREATE TABLE datagenerated_creditcard (
-	creditcardid int NOT NULL,
+	creditcardid int IDENTITY(1,1) NOT NULL,
 	creditcardnumber varchar(20),
 	creditcardname varchar(20),
 	createddate datetime,
@@ -172,7 +172,7 @@ CREATE TABLE datagenerated_creditcard (
 	PRIMARY KEY (creditcardid)
 );
 CREATE TABLE datagenerated_custom (
-	datagencustomdid int NOT NULL,
+	datagencustomdid int IDENTITY(1,1) NOT NULL,
 	customidentifier varchar(40),
 	customidentifierdesc varchar(29),
 	createddate datetime,
@@ -183,7 +183,7 @@ CREATE TABLE datagenerated_custom (
 	PRIMARY KEY (datagencustomdid)
 );
 CREATE TABLE datagenerated_dateofbirth (
-	dateofbirthsid int NOT NULL,
+	dateofbirthsid int IDENTITY(1,1) NOT NULL,
 	dateofbirth varchar(12),
 	dateofbirthdate date,
 	age int,
@@ -194,7 +194,7 @@ CREATE TABLE datagenerated_dateofbirth (
 	PRIMARY KEY (dateofbirthsid)
 );
 CREATE TABLE datagenerated_devices (
-	devicesid int NOT NULL,
+	devicesid int IDENTITY(1,1) NOT NULL,
 	devicename varchar(40),
 	devicetypeid int,
 	createddate datetime,
@@ -203,7 +203,7 @@ CREATE TABLE datagenerated_devices (
 	PRIMARY KEY (devicesid)
 );
 CREATE TABLE datagenerated_driverslicenses (
-	driverslicensesid int NOT NULL,
+	driverslicensesid int IDENTITY(1,1) NOT NULL,
 	dln varchar(25),
 	statecode varchar(2),
 	createddate datetime,
@@ -214,7 +214,7 @@ CREATE TABLE datagenerated_driverslicenses (
 	PRIMARY KEY (driverslicensesid)
 );
 CREATE TABLE datagenerated_ein (
-	einid int NOT NULL,
+	einid int IDENTITY(1,1) NOT NULL,
 	einvalue varchar(10),
 	createddate datetime,
 	statusid int,
@@ -223,7 +223,7 @@ CREATE TABLE datagenerated_ein (
 	PRIMARY KEY (einid)
 );
 CREATE TABLE datagenerated_phonenumber (
-	phonenumberid int NOT NULL,
+	phonenumberid int IDENTITY(1,1) NOT NULL,
 	phonenumbervalue varchar(8),
 	createddate datetime,
 	statusid int,
@@ -232,7 +232,7 @@ CREATE TABLE datagenerated_phonenumber (
 	PRIMARY KEY (phonenumberid)
 );
 CREATE TABLE datagenerated_phonenumbersintl (
-	phonenumberintlid int NOT NULL,
+	phonenumberintlid int IDENTITY(1,1) NOT NULL,
 	phonenumbervalue varchar(12),
 	createddate datetime,
 	statusid int,
@@ -242,7 +242,7 @@ CREATE TABLE datagenerated_phonenumbersintl (
 	PRIMARY KEY (phonenumberintlid)
 );
 CREATE TABLE datagenerated_regexs (
-	regexid int NOT NULL,
+	regexid int IDENTITY(1,1) NOT NULL,
 	regexvalue varchar(25),
 	createddate datetime,
 	statusid int,
@@ -252,7 +252,7 @@ CREATE TABLE datagenerated_regexs (
 	PRIMARY KEY (regexid)
 );
 CREATE TABLE datagenerated_serialnumbers (
-	serialnumberid int NOT NULL,
+	serialnumberid int IDENTITY(1,1) NOT NULL,
 	serialnumbervalue varchar(25),
 	createddate datetime,
 	statusid int,
@@ -261,7 +261,7 @@ CREATE TABLE datagenerated_serialnumbers (
 	PRIMARY KEY (serialnumberid)
 );
 CREATE TABLE datagenerated_socialsecuritynumber (
-	socialsecuritynumberid int NOT NULL,
+	socialsecuritynumberid int IDENTITY(1,1) NOT NULL,
 	socialsecuritynumbervalue varchar(11),
 	createddate datetime,
 	statusid int,
@@ -270,7 +270,7 @@ CREATE TABLE datagenerated_socialsecuritynumber (
 	PRIMARY KEY (socialsecuritynumberid)
 );
 CREATE TABLE datagenerated_useridentities (
-	useridentitiesid int NOT NULL,
+	useridentitiesid int IDENTITY(1,1) NOT NULL,
 	useridentityvalue varchar(20),
 	userdomain varchar(20),
 	additionalattributes varchar(40),
@@ -296,7 +296,7 @@ CREATE TABLE datamodel_domain (
 	PRIMARY KEY (domainname)
 );
 CREATE TABLE platform_appsettings_general (
-	appsettingsid int NOT NULL,
+	appsettingsid int IDENTITY(1,1) NOT NULL,
 	appsettingname varchar(50),
 	appsettingvalue varchar(199),
 	createddate datetime,
@@ -306,7 +306,7 @@ CREATE TABLE platform_appsettings_general (
 	PRIMARY KEY (appsettingsid)
 );
 CREATE TABLE platform_config_dataattributes (
-	datagenconfigid int NOT NULL,
+	datagenconfigid int IDENTITY(1,1) NOT NULL,
 	datatypegenconfigname varchar(25),
 	dataattributeid int,
 	runquantity int,
@@ -318,7 +318,7 @@ CREATE TABLE platform_config_dataattributes (
 	PRIMARY KEY (datagenconfigid)
 );
 CREATE TABLE platform_config_datastructures (
-	platformdatastructuresid int NOT NULL,
+	platformdatastructuresid int IDENTITY(1,1) NOT NULL,
 	datastructurename varchar(50),
 	sensitivityflagid int,
 	createddate datetime,
@@ -329,7 +329,7 @@ CREATE TABLE platform_config_datastructures (
 	PRIMARY KEY (platformdatastructuresid)
 );
 CREATE TABLE platform_config_datastructures_dtl (
-	platformdatastructurestodataattributesid int NOT NULL,
+	platformdatastructurestodataattributesid int IDENTITY(1,1) NOT NULL,
 	platformdatastructuresid int,
 	compositedatastructurename varchar(50),
 	sensitivityflagid int,
@@ -342,7 +342,7 @@ CREATE TABLE platform_config_datastructures_dtl (
 	PRIMARY KEY (platformdatastructurestodataattributesid)
 );
 CREATE TABLE platform_dataattributes (
-	platformdataattributesid int NOT NULL,
+	platformdataattributesid int IDENTITY(1,1) NOT NULL,
 	dataattributename varchar(50),
 	sensitivityflagid int,
 	createddate datetime,
@@ -354,7 +354,7 @@ CREATE TABLE platform_dataattributes (
 	PRIMARY KEY (platformdataattributesid)
 );
 CREATE TABLE platform_industrystds_metadata (
-	platformdindustrystdmetadatasid int NOT NULL,
+	platformdindustrystdmetadatasid int IDENTITY(1,1) NOT NULL,
 	eventtypeid varchar(10),
 	industryversion varchar(10),
 	segmentdetail varchar(50),
@@ -381,7 +381,7 @@ CREATE TABLE refdata_application (
 	PRIMARY KEY (appguid)
 );
 CREATE TABLE refdata_codeset (
-	codesetsid int NOT NULL,
+	codesetsid int IDENTITY(1,1) NOT NULL,
 	codesetname varchar(50),
 	industrystd varchar(6),
 	statusid int,
@@ -396,7 +396,7 @@ CREATE TABLE refdata_codeset (
 	PRIMARY KEY (codesetsid)
 );
 CREATE TABLE refdata_codesets_crossmaps (
-	codesetcrossmapid int NOT NULL,
+	codesetcrossmapid int IDENTITY(1,1) NOT NULL,
 	implcodesetsid int NOT NULL,
 	codesettoapplicationid bigint,
 	terminologystdto int,
@@ -410,7 +410,7 @@ CREATE TABLE refdata_codesets_crossmaps (
 	PRIMARY KEY (codesetcrossmapid)
 );
 CREATE TABLE refdata_countries (
-	countryid int NOT NULL,
+	countryid int IDENTITY(1,1) NOT NULL,
 	idd varchar(5),
 	countryname varchar(59),
 	createddate datetime,
@@ -418,7 +418,7 @@ CREATE TABLE refdata_countries (
 	PRIMARY KEY (countryid)
 );
 CREATE TABLE refdata_datagentypes (
-	datagentypeid int NOT NULL,
+	datagentypeid int IDENTITY(1,1) NOT NULL,
 	datagentypedescription varchar(65),
 	definition varchar(255),
 	dataattributeid int,
@@ -428,21 +428,21 @@ CREATE TABLE refdata_datagentypes (
 	PRIMARY KEY (datagentypeid)
 );
 CREATE TABLE refdata_devicetypes (
-	devicetypeid int NOT NULL,
+	devicetypeid int IDENTITY(1,1) NOT NULL,
 	devicetype varchar(30),
 	createddate datetime,
 	statusid int,
 	PRIMARY KEY (devicetypeid)
 );
 CREATE TABLE refdata_industries (
-	industryid int NOT NULL,
+	industryid int IDENTITY(1,1) NOT NULL,
 	industryname varchar(45),
 	createddate datetime,
 	statusid int,
 	PRIMARY KEY (industryid)
 );
 CREATE TABLE refdata_industriestobusiness (
-	industrytobusinessid int NOT NULL,
+	industrytobusinessid int IDENTITY(1,1) NOT NULL,
 	industryid int,
 	businessarea varchar(50),
 	createddate datetime,
@@ -465,7 +465,7 @@ CREATE TABLE refdata_industrystd_eventtypes (
 	PRIMARY KEY (eventtypeid)
 );
 CREATE TABLE refdata_industrystd_eventtypes_groupers (
-	industrystdeventtypesgroupersid int NOT NULL,
+	industrystdeventtypesgroupersid int IDENTITY(1,1) NOT NULL,
 	eventtypeid varchar(10),
 	eventtypesddesc varchar(30),
 	industrystd varchar(6),
@@ -510,7 +510,7 @@ CREATE TABLE refdata_organization (
 	PRIMARY KEY (organizationguid)
 );
 CREATE TABLE refdata_platformparams (
-	platformparamsid int NOT NULL,
+	platformparamsid int IDENTITY(1,1) NOT NULL,
 	platformparamvalues varchar(35),
 	platformparamdesc varchar(70),
 	createddate datetime,
@@ -518,7 +518,7 @@ CREATE TABLE refdata_platformparams (
 	PRIMARY KEY (platformparamsid)
 );
 CREATE TABLE refdata_platformparamstodataattributes (
-	platformparamstodataattributeid int NOT NULL,
+	platformparamstodataattributeid int IDENTITY(1,1) NOT NULL,
 	platformparamsid int,
 	dataattributeid int,
 	createddate datetime,
@@ -527,7 +527,7 @@ CREATE TABLE refdata_platformparamstodataattributes (
 	PRIMARY KEY (platformparamstodataattributeid)
 );
 CREATE TABLE refdata_professiontypes (
-	professiontypeid int NOT NULL,
+	professiontypeid int IDENTITY(1,1) NOT NULL,
 	professiontypename varchar(65),
 	createduser varchar(20),
 	createddate datetime,
@@ -535,7 +535,7 @@ CREATE TABLE refdata_professiontypes (
 	PRIMARY KEY (professiontypeid)
 );
 CREATE TABLE refdata_regextypes (
-	implregextypeid int NOT NULL,
+	implregextypeid int IDENTITY(1,1) NOT NULL,
 	regextypedesc varchar(69),
 	createddate datetime,
 	statusid int,
@@ -544,7 +544,7 @@ CREATE TABLE refdata_regextypes (
 	PRIMARY KEY (implregextypeid)
 );
 CREATE TABLE refdata_rulesets (
-	ruleid int NOT NULL,
+	ruleid int IDENTITY(1,1) NOT NULL,
 	rulename varchar(65),
 	createduser varchar(20),
 	createddate datetime,
@@ -568,21 +568,21 @@ CREATE TABLE refdata_rulesetsdefinitions (
 	PRIMARY KEY (rulesetdefinitionsid)
 );
 CREATE TABLE refdata_sensitivityflag (
-	sensitiveflagid int NOT NULL,
+	sensitiveflagid int IDENTITY(1,1) NOT NULL,
 	sensitiveflagdesc varchar(30),
 	createddate datetime,
 	statusid int,
 	PRIMARY KEY (sensitiveflagid)
 );
 CREATE TABLE refdata_status (
-	statusid int NOT NULL,
+	statusid int IDENTITY(1,1) NOT NULL,
 	statusdescription varchar(45) NOT NULL,
 	createddate datetime,
 	createduser varchar(20),
 	PRIMARY KEY (statusid)
 );
 CREATE TABLE refdata_terminologystd (
-	terminologystdid int NOT NULL,
+	terminologystdid int IDENTITY(1,1) NOT NULL,
 	terminologystd varchar(25) NOT NULL,
 	terminologystdversion varchar(10) NOT NULL,
 	terminologystddesc varchar(129),
@@ -608,7 +608,7 @@ CREATE TABLE refdata_usstates (
 	PRIMARY KEY (stateid)
 );
 CREATE TABLE refdata_vendor (
-	vendorid int NOT NULL,
+	vendorid int IDENTITY(1,1) NOT NULL,
 	vendorname varchar(50),
 	createddate datetime,
 	statusid int,
@@ -617,7 +617,7 @@ CREATE TABLE refdata_vendor (
 	PRIMARY KEY (vendorid)
 );
 CREATE TABLE terms_codeset_industrystd (
-	termcodesetid int NOT NULL,
+	termcodesetid int IDENTITY(1,1) NOT NULL,
 	codesetsid int NOT NULL,
 	createddate datetime,
 	statusid int,
