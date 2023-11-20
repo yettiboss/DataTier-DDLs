@@ -1,0 +1,11 @@
+Postgres-2023-08
+------------------
+
+- Added refdata_industrystd_eventtypes
+- Added refdata_industrystd_eventtypes_grouper
+- Added platform_industrystds_metadata
+- Changed all impl_ to refdata_
+- Cleaned up refdata_codeset and refdata_codesets tables to refdata_codeset
+- datamodel_apis to apis
+  changed pk to apis
+  removed dataattributeid
