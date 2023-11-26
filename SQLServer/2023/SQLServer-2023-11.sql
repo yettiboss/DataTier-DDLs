@@ -4,7 +4,7 @@ CREATE TABLE apis (
 	baseurllocation varchar(99),
 	apiname varchar(79),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	purpose varchar(49),
 	datmodel_tablename varchar(99),
 	apiparams varchar(59),
@@ -16,7 +16,7 @@ CREATE TABLE databuilt_datastructues (
 	datastructurename varchar(29),
 	datastructuredetails text,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	registeredapp char(38),
 	PRIMARY KEY (datastructurecoreid)
 );
@@ -29,7 +29,7 @@ CREATE TABLE dataexisting_ababanking (
 	statecode varchar(2),
 	zipcode varchar(5),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (ababankingid)
@@ -40,7 +40,7 @@ CREATE TABLE dataexisting_areacode (
 	timezone varchar(3),
 	statecode varchar(2),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (areacodeid)
@@ -49,7 +49,7 @@ CREATE TABLE dataexisting_areacodeintl (
 	iddcode varchar(5) NOT NULL,
 	countryid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	registeredapp char(38),
 	PRIMARY KEY (iddcode)
 );
@@ -57,7 +57,7 @@ CREATE TABLE dataexisting_companies (
 	companiesid int IDENTITY(1,1) NOT NULL,
 	companyname varchar(79),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (companiesid)
@@ -66,7 +66,7 @@ CREATE TABLE dataexisting_namefirst (
 	firstnameid int IDENTITY(1,1) NOT NULL,
 	firstname varchar(39),
 	gender varchar(1),
-	statusid int,
+	statusid int default 1,
 	createddate datetime,
 	createduser varchar(20),
 	registeredapp char(38),
@@ -75,7 +75,7 @@ CREATE TABLE dataexisting_namefirst (
 CREATE TABLE dataexisting_namelast (
 	lastnameid int IDENTITY(1,1) NOT NULL,
 	lastname varchar(69),
-	statusid int NOT NULL,
+	statusid int default 1 NOT NULL,
 	createddate datetime,
 	createduser varchar(20),
 	registeredapp char(38),
@@ -84,7 +84,7 @@ CREATE TABLE dataexisting_namelast (
 CREATE TABLE dataexisting_profession (
 	professionid int IDENTITY(1,1) NOT NULL,
 	professionname varchar(149),
-	statusid int,
+	statusid int default 1,
 	createddate datetime,
 	createduser varchar(20),
 	registeredapp char(38),
@@ -95,7 +95,7 @@ CREATE TABLE dataexisting_upccodes (
 	upccodename varchar(15),
 	upcproductname varchar(150),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	registeredapp char(38),
 	PRIMARY KEY (upccodeid)
 );
@@ -109,7 +109,7 @@ CREATE TABLE dataexisting_zipcodeintl (
 	longitude varchar(10),
 	Location varchar(99),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (zipcodeintnlid)
@@ -124,7 +124,7 @@ CREATE TABLE dataexisting_zipcodeus (
 	longitude varchar(10),
 	lctn varchar(99),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (zipcodeid)
@@ -134,7 +134,7 @@ CREATE TABLE datagenerated_accountnumbers (
 	accountnumbervalue varchar(20),
 	createddate datetime,
 	createduser varchar(20),
-	statusid int,
+	statusid int default 1,
 	registeredapp char(38),
 	datagentypeid int,
 	PRIMARY KEY (accountnumbersid)
@@ -144,7 +144,7 @@ CREATE TABLE datagenerated_addresses (
 	addressstreet varchar(99),
 	addressstreet2 varchar(59),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	datagentypeid int,
@@ -154,7 +154,7 @@ CREATE TABLE datagenerated_bankaccount (
 	bankaccountsid int IDENTITY(1,1) NOT NULL,
 	bankaccountvalue varchar(17),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	datagentypeid int,
@@ -165,7 +165,7 @@ CREATE TABLE datagenerated_creditcard (
 	creditcardnumber varchar(20),
 	creditcardname varchar(20),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	datagentypeid int,
@@ -176,7 +176,7 @@ CREATE TABLE datagenerated_custom (
 	customidentifier varchar(40),
 	customidentifierdesc varchar(29),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	datagentypeid int,
@@ -188,7 +188,7 @@ CREATE TABLE datagenerated_dateofbirth (
 	dateofbirthdate date,
 	age int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (dateofbirthsid)
@@ -198,7 +198,7 @@ CREATE TABLE datagenerated_devices (
 	devicename varchar(40),
 	devicetypeid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	application char(38),
 	PRIMARY KEY (devicesid)
 );
@@ -207,7 +207,7 @@ CREATE TABLE datagenerated_driverslicenses (
 	dln varchar(25),
 	statecode varchar(2),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	datagentypeid int,
 	createduser varchar(20),
 	registeredapp char(38),
@@ -217,7 +217,7 @@ CREATE TABLE datagenerated_ein (
 	einid int IDENTITY(1,1) NOT NULL,
 	einvalue varchar(10),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (einid)
@@ -226,7 +226,7 @@ CREATE TABLE datagenerated_phonenumber (
 	phonenumberid int IDENTITY(1,1) NOT NULL,
 	phonenumbervalue varchar(8),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (phonenumberid)
@@ -235,7 +235,7 @@ CREATE TABLE datagenerated_phonenumbersintl (
 	phonenumberintlid int IDENTITY(1,1) NOT NULL,
 	phonenumbervalue varchar(12),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	countryid int,
 	createduser varchar(20),
 	registeredapp char(38),
@@ -245,7 +245,7 @@ CREATE TABLE datagenerated_regexs (
 	regexid int IDENTITY(1,1) NOT NULL,
 	regexvalue varchar(25),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	regextypeid int,
 	registeredapp char(38),
@@ -255,7 +255,7 @@ CREATE TABLE datagenerated_serialnumbers (
 	serialnumberid int IDENTITY(1,1) NOT NULL,
 	serialnumbervalue varchar(25),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (serialnumberid)
@@ -264,7 +264,7 @@ CREATE TABLE datagenerated_socialsecuritynumber (
 	socialsecuritynumberid int IDENTITY(1,1) NOT NULL,
 	socialsecuritynumbervalue varchar(11),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	registeredapp char(38),
 	PRIMARY KEY (socialsecuritynumberid)
@@ -275,7 +275,7 @@ CREATE TABLE datagenerated_useridentities (
 	userdomain varchar(20),
 	additionalattributes varchar(40),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	registeredapp char(38),
 	datagentypeid int,
 	PRIMARY KEY (useridentitiesid)
@@ -283,7 +283,7 @@ CREATE TABLE datagenerated_useridentities (
 CREATE TABLE datamodel_datatables (
 	tablename varchar(64) NOT NULL,
 	tableinformation varchar(249),
-	statusid int,
+	statusid int default 1,
 	createddate datetime,
 	domain varchar(64),
 	PRIMARY KEY (tablename)
@@ -291,7 +291,7 @@ CREATE TABLE datamodel_datatables (
 CREATE TABLE datamodel_domain (
 	domainname varchar(64) NOT NULL,
 	domaininformation varchar(249),
-	statusid int,
+	statusid int default 1,
 	createddate datetime,
 	PRIMARY KEY (domainname)
 );
@@ -300,7 +300,7 @@ CREATE TABLE platform_appsettings_general (
 	appsettingname varchar(50),
 	appsettingvalue varchar(199),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	registeredapp char(38),
 	defaultdatagenerationapp char(38),
 	PRIMARY KEY (appsettingsid)
@@ -312,7 +312,7 @@ CREATE TABLE platform_config_dataattributes (
 	runquantity int,
 	datagentypeid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	applicationid char(38),
 	PRIMARY KEY (datagenconfigid)
@@ -322,7 +322,7 @@ CREATE TABLE platform_config_datastructures (
 	datastructurename varchar(50),
 	sensitivityflagid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	platformdatastructuresguid char(38),
 	registeredapp char(38),
@@ -334,7 +334,7 @@ CREATE TABLE platform_config_datastructures_dtl (
 	compositedatastructurename varchar(50),
 	sensitivityflagid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	platformdatastructurestodataattributesguid char(38),
 	registeredapp char(38),
@@ -346,7 +346,7 @@ CREATE TABLE platform_dataattributes (
 	dataattributename varchar(50),
 	sensitivityflagid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	platformdataattributeguid char(38),
 	registeredapp char(38),
@@ -364,7 +364,7 @@ CREATE TABLE platform_industrystds_metadata (
 	fielddesc varchar(99),
 	sensitivityflagid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	PRIMARY KEY (platformdindustrystdmetadatasid)
 );
@@ -374,7 +374,7 @@ CREATE TABLE refdata_application (
 	applicationdesc varchar(50),
 	createduser varchar(20),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	vendorid int,
 	industry_oid varchar(49),
 	organization_uid varchar(49),
@@ -384,7 +384,7 @@ CREATE TABLE refdata_codeset (
 	codesetsid int IDENTITY(1,1) NOT NULL,
 	codesetname varchar(50),
 	industrystd varchar(6),
-	statusid int,
+	statusid int default 1,
 	createddate datetime,
 	createduser varchar(20),
 	codesetguid char(38),
@@ -401,7 +401,7 @@ CREATE TABLE refdata_codesets_crossmaps (
 	codesettoapplicationid bigint,
 	terminologystdto int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	transformcodevalue varchar(40),
 	transformcodedesc varchar(129),
@@ -414,7 +414,7 @@ CREATE TABLE refdata_countries (
 	idd varchar(5),
 	countryname varchar(59),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (countryid)
 );
 CREATE TABLE refdata_datagentypes (
@@ -423,7 +423,7 @@ CREATE TABLE refdata_datagentypes (
 	definition varchar(255),
 	dataattributeid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	PRIMARY KEY (datagentypeid)
 );
@@ -438,7 +438,7 @@ CREATE TABLE refdata_industries (
 	industryid int IDENTITY(1,1) NOT NULL,
 	industryname varchar(45),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (industryid)
 );
 CREATE TABLE refdata_industriestobusiness (
@@ -446,14 +446,14 @@ CREATE TABLE refdata_industriestobusiness (
 	industryid int,
 	businessarea varchar(50),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (industrytobusinessid)
 );
 CREATE TABLE refdata_industrystd (
 	industrystd varchar(6) NOT NULL,
 	industrystddesc varchar(30),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (industrystd)
 );
 CREATE TABLE refdata_industrystd_eventtypes (
@@ -461,7 +461,7 @@ CREATE TABLE refdata_industrystd_eventtypes (
 	eventtypesddesc varchar(30),
 	industrystd varchar(6),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (eventtypeid)
 );
 CREATE TABLE refdata_industrystd_eventtypes_groupers (
@@ -470,7 +470,7 @@ CREATE TABLE refdata_industrystd_eventtypes_groupers (
 	eventtypesddesc varchar(30),
 	industrystd varchar(6),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (industrystdeventtypesgroupersid)
 );
 CREATE TABLE refdata_legalentities (
@@ -481,7 +481,7 @@ CREATE TABLE refdata_legalentities (
 	stateid varchar(2),
 	zipcode varchar(12),
 	createduser varchar(20),
-	statusid int,
+	statusid int default 1,
 	createddate datetime NOT NULL,
 	locationurl varchar(99),
 	locationphone varchar(12),
@@ -491,7 +491,7 @@ CREATE TABLE refdata_operationtype (
 	operationtypeid varchar(7) NOT NULL,
 	operationtypename varchar(60),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (operationtypeid)
 );
 CREATE TABLE refdata_organization (
@@ -504,7 +504,7 @@ CREATE TABLE refdata_organization (
 	stateid varchar(2),
 	zipcode varchar(12),
 	createduser varchar(20),
-	statusid int,
+	statusid int default 1,
 	createddate datetime NOT NULL,
 	legalentityguid char(38),
 	PRIMARY KEY (organizationguid)
@@ -514,7 +514,7 @@ CREATE TABLE refdata_platformparams (
 	platformparamvalues varchar(35),
 	platformparamdesc varchar(70),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (platformparamsid)
 );
 CREATE TABLE refdata_platformparamstodataattributes (
@@ -522,7 +522,7 @@ CREATE TABLE refdata_platformparamstodataattributes (
 	platformparamsid int,
 	dataattributeid int,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	registeredapp char(38),
 	PRIMARY KEY (platformparamstodataattributeid)
 );
@@ -531,14 +531,14 @@ CREATE TABLE refdata_professiontypes (
 	professiontypename varchar(65),
 	createduser varchar(20),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (professiontypeid)
 );
 CREATE TABLE refdata_regextypes (
 	implregextypeid int IDENTITY(1,1) NOT NULL,
 	regextypedesc varchar(69),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	organizationid char(38),
 	applicationid char(38),
 	PRIMARY KEY (implregextypeid)
@@ -548,7 +548,7 @@ CREATE TABLE refdata_rulesets (
 	rulename varchar(65),
 	createduser varchar(20),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	expirationdate datetime,
 	PRIMARY KEY (ruleid)
 );
@@ -559,7 +559,7 @@ CREATE TABLE refdata_rulesetsdefinitions (
 	steporderid int,
 	operationtypeid varchar(7),
 	rulesetdefvalue char(40),
-	statusid int,
+	statusid int default 1,
 	createddate datetime,
 	effectivedate datetime,
 	applicationid char(38),
@@ -571,7 +571,7 @@ CREATE TABLE refdata_sensitivityflag (
 	sensitiveflagid int IDENTITY(1,1) NOT NULL,
 	sensitiveflagdesc varchar(30),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (sensitiveflagid)
 );
 CREATE TABLE refdata_status (
@@ -587,14 +587,14 @@ CREATE TABLE refdata_terminologystd (
 	terminologystdversion varchar(10) NOT NULL,
 	terminologystddesc varchar(129),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (terminologystdid)
 );
 CREATE TABLE refdata_timezones (
 	timezonevalue varchar(3) NOT NULL,
 	timezonedesc varchar(25),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	PRIMARY KEY (timezonevalue)
 );
 CREATE TABLE refdata_usstates (
@@ -603,7 +603,7 @@ CREATE TABLE refdata_usstates (
 	lattitude varchar(12),
 	longitude varchar(12),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	PRIMARY KEY (stateid)
 );
@@ -611,7 +611,7 @@ CREATE TABLE refdata_vendor (
 	vendorid int IDENTITY(1,1) NOT NULL,
 	vendorname varchar(50),
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	createduser varchar(20),
 	vendorguid char(38),
 	PRIMARY KEY (vendorid)
@@ -620,7 +620,7 @@ CREATE TABLE terms_codeset_industrystd (
 	termcodesetid int IDENTITY(1,1) NOT NULL,
 	codesetsid int NOT NULL,
 	createddate datetime,
-	statusid int,
+	statusid int default 1,
 	codevalue varchar(20),
 	codedesc varchar(129),
 	industrystd varchar(6),
@@ -644,7 +644,8 @@ CREATE TABLE terms_umls_mrconoso (
 	code varchar(100) NOT NULL,
 	str varchar(3000) NOT NULL,
 	srl varchar(25) NOT NULL,
-	suppress char(1) NOT NULL
+	suppress char(1) NOT NULL,
+    statusid int default 1
 );
 ALTER TABLE apis
 	ADD FOREIGN KEY (statusid) 
