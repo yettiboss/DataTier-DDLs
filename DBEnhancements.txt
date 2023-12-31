@@ -9,3 +9,20 @@ Postgres-2023-08
 - datamodel_apis to apis
   changed pk to apis
   removed dataattributeid
+
+
+2024-01
+-------
+ - All existing data attributes - existing or generated will go into a single table, datatier
+ - Remove all dataexisting_ and datagenerated_ tables
+ - remove tables not populated or being currently used:
+ platform_industrystds_metadata,
+ refdata_platformparams,
+ refdata_platformparamstodataattributes,
+ platform_industrystds_metadata,
+ platform_appsettings_general,
+ platform_config_dataattributes
+ (add runquantity to the table).
+ - rename refdata_datagentypes to platform_datageneration
+ - rename platform_config_datastructures to platform_datastructures
+ -
