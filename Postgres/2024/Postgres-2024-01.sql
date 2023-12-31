@@ -650,9 +650,14 @@ ALTER TABLE terms_codeset_industrystd
 
 
 -- Indexes
+create index if not exists datatier_index
+    on public.datatier (datatierid, basevalue, supportingvalue1, supportingvalue2, supportingvalue3, supportingvalue4,
+                        supportingvalue5, supportingvalue6, supportingvalue7, createddate, dataattributeid,
+                        datagentypeid, statusid, createduser, registeredapp);
 
 CREATE INDEX terms_codeset_industrystd_index ON terms_codeset_industrystd USING btree (termcodesetid, codesetsid, createddate, statusid, codevalue, codedesc, industrystd);
 
 CREATE UNIQUE INDEX terms_codeset_industrystd_uindex ON terms_codeset_industrystd USING btree (codesetsid, codevalue, codedesc, industrystd);
 
 CREATE INDEX terms_umls_mrconoso_index ON terms_umls_mrconoso USING btree (cui, lat, ts, lui, stt, sui, ispref, aui, saui, scui, sdui, sab, tty, code, str, srl, suppress, cvf);
+
