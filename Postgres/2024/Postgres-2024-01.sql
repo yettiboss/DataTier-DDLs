@@ -96,7 +96,7 @@ CREATE TABLE platform_dataattributes (
       createduser varchar(20) DEFAULT 'NULL'::character varying,
       platformdataattributeguid char(38) DEFAULT 'NULL'::bpchar,
       registeredapp char(38) DEFAULT 'NULL'::bpchar,
-      platformtablename varchar(38) DEFAULT 'NULL'::character varying,
+      attributetype varchar(10) DEFAULT 'NULL'::character varying,
       PRIMARY KEY (platformdataattributesid)
 );
 
