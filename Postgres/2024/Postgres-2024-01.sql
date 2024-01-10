@@ -35,7 +35,7 @@ CREATE TABLE databuilt_datastructure
         PRIMARY KEY (datastructurecoreid)
 );
 
-create table if not exists public.datatier
+create table datatier
 (
     datatierid       integer default nextval('datatier_seq'::regclass) not null
         primary key,
