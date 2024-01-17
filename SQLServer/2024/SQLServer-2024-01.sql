@@ -1,14 +1,17 @@
+drop table if exists databuilt_datastructure;
 CREATE TABLE databuilt_datastructure (
-                                         datastructurecoreid IDENTITY(1,1) NOT NULL,
+                                         datastructurecoreid INT IDENTITY(1,1) NOT NULL,
                                          datastructurename varchar(29),
                                          datastructuredetails text,
                                          createddate datetime DEFAULT (GETUTCDATE()),
                                          statusid int default 1,
-                                         registeredapp varchar(38),
+                                         registeredapp char(38),
                                          PRIMARY KEY (datastructurecoreid)
 );
+
+drop table if exists datamodel_apis;
 CREATE TABLE datamodel_apis (
-                                apiid IDENTITY(1,1) NOT NULL,
+                                apiid INT IDENTITY(1,1) NOT NULL,
                                 technology varchar(30),
                                 dataattributesid int,
                                 baseurllocation varchar(99),
@@ -21,6 +24,8 @@ CREATE TABLE datamodel_apis (
                                 apiexample varchar(149),
                                 PRIMARY KEY (apiid)
 );
+
+drop TABLE if exists datamodel_datatables;
 CREATE TABLE datamodel_datatables (
                                       tablename varchar(64) NOT NULL,
                                       tableinformation varchar(249),
@@ -29,6 +34,8 @@ CREATE TABLE datamodel_datatables (
                                       datadomain varchar(64),
                                       PRIMARY KEY (tablename)
 );
+
+drop table if exists datamodel_domain;
 CREATE TABLE datamodel_domain (
                                   domainname varchar(64) NOT NULL,
                                   domaininformation varchar(249),
@@ -36,8 +43,10 @@ CREATE TABLE datamodel_domain (
                                   createddate datetime DEFAULT (GETUTCDATE()),
                                   PRIMARY KEY (domainname)
 );
+
+drop table if exists datatier;
 CREATE TABLE datatier (
-                          datatierid IDENTITY(1,1) NOT NULL,
+                          datatierid INT IDENTITY(1,1) NOT NULL,
                           basevalue varchar(99),
                           supportingvalue1 varchar(169),
                           supportingvalue2 varchar(50),
@@ -54,8 +63,10 @@ CREATE TABLE datatier (
                           datagentypeid int,
                           PRIMARY KEY (datatierid)
 );
+
+drop table if exists platform_dataattributes;
 CREATE TABLE platform_dataattributes (
-                                         platformdataattributesid IDENTITY(1,1) NOT NULL,
+                                         platformdataattributesid INT IDENTITY(1,1) NOT NULL,
                                          dataattributename varchar(50),
                                          sensitivityflagid int,
                                          createddate datetime DEFAULT (GETUTCDATE()),
@@ -67,8 +78,10 @@ CREATE TABLE platform_dataattributes (
                                          attributetype varchar(10),
                                          PRIMARY KEY (platformdataattributesid)
 );
+
+drop table if exists platform_datageneration;
 CREATE TABLE platform_datageneration (
-                                         datagentypeid IDENTITY(1,1) NOT NULL,
+                                         datagentypeid INT IDENTITY(1,1) NOT NULL,
                                          datagentypedescription varchar(65),
                                          definition varchar(255),
                                          dataattributeid int,
@@ -77,8 +90,10 @@ CREATE TABLE platform_datageneration (
                                          createduser varchar(20),
                                          PRIMARY KEY (datagentypeid)
 );
+
+drop table if exists platform_datastrucutre;
 CREATE TABLE platform_datastructures (
-                                         platformdatastructuresid IDENTITY(1,1) NOT NULL,
+                                         platformdatastructuresid INT IDENTITY(1,1) NOT NULL,
                                          datastructurename varchar(50),
                                          sensitivityflagid int,
                                          createddate datetime DEFAULT (GETUTCDATE()),
@@ -88,8 +103,10 @@ CREATE TABLE platform_datastructures (
                                          registeredapp char(38),
                                          PRIMARY KEY (platformdatastructuresid)
 );
+
+drop table if exists platform_datastructures_dtl;
 CREATE TABLE platform_datastructures_dtl (
-                                             platformdatastructuresdtlid IDENTITY(1,1) NOT NULL,
+                                             platformdatastructuresdtlid INT IDENTITY(1,1) NOT NULL,
                                              platformdatastructuresid int,
                                              compositedatastructurename varchar(50),
                                              sensitivityflagid int,
@@ -101,6 +118,8 @@ CREATE TABLE platform_datastructures_dtl (
                                              platformdataattributesid int,
                                              PRIMARY KEY (platformdatastructuresdtlid)
 );
+
+drop table if exists refdata_application;
 CREATE TABLE refdata_application (
                                      appguid char(38) NOT NULL,
                                      applicationcustomcode varchar(15),
@@ -113,8 +132,10 @@ CREATE TABLE refdata_application (
                                      organization_uid varchar(49),
                                      PRIMARY KEY (appguid)
 );
+
+drop table if exists refdata_codeset;
 CREATE TABLE refdata_codeset (
-                                 codesetsid IDENTITY(1,1) NOT NULL,
+                                 codesetsid INT IDENTITY(1,1) NOT NULL,
                                  codesetname varchar(50),
                                  industrystd varchar(6),
                                  statusid int default 1,
@@ -128,8 +149,10 @@ CREATE TABLE refdata_codeset (
                                  externallink varchar(99),
                                  PRIMARY KEY (codesetsid)
 );
+
+drop table if exists refdata_codesets_crossmaps;
 CREATE TABLE refdata_codesets_crossmaps (
-                                            codesetcrossmapid IDENTITY(1,1) NOT NULL,
+                                            codesetcrossmapid INT IDENTITY(1,1) NOT NULL,
                                             implcodesetsid int NOT NULL,
                                             applicationid bigint,
                                             terminologystdto int,
@@ -142,36 +165,46 @@ CREATE TABLE refdata_codesets_crossmaps (
                                             originalcodedesc varchar(40),
                                             PRIMARY KEY (codesetcrossmapid)
 );
+
+drop table if exists refdata_countries;
 CREATE TABLE refdata_countries (
-                                   countryid IDENTITY(1,1) NOT NULL,
+                                   countryid INT IDENTITY(1,1) NOT NULL,
                                    idd varchar(5),
                                    countryname varchar(59),
                                    createddate datetime DEFAULT (GETUTCDATE()),
                                    statusid int default 1,
                                    PRIMARY KEY (countryid)
 );
+
+drop table if exists refdata_devicetypes;
 CREATE TABLE refdata_devicetypes (
-                                     devicetypeid IDENTITY(1,1) NOT NULL,
+                                     devicetypeid INT IDENTITY(1,1) NOT NULL,
                                      devicetype varchar(30),
                                      createddate datetime DEFAULT (GETUTCDATE()),
                                      statusid int default 1,
                                      PRIMARY KEY (devicetypeid)
 );
+
+drop table if exists refdata_industries;
 CREATE TABLE refdata_industries (
-                                    industryid IDENTITY(1,1) NOT NULL,
+                                    industryid INT IDENTITY(1,1) NOT NULL,
                                     industryname varchar(45),
                                     createddate datetime DEFAULT (GETUTCDATE()),
                                     statusid int default 1,
                                     PRIMARY KEY (industryid)
 );
+
+drop table if exists refdata_industriestobusiness;
 CREATE TABLE refdata_industriestobusiness (
-                                              industrytobusinessid IDENTITY(1,1) NOT NULL,
+                                              industrytobusinessid INT IDENTITY(1,1) NOT NULL,
                                               industryid int,
                                               businessarea varchar(50),
                                               createddate datetime DEFAULT (GETUTCDATE()),
                                               statusid int default 1,
                                               PRIMARY KEY (industrytobusinessid)
 );
+
+drop table if exists refdata_industrystd;
 CREATE TABLE refdata_industrystd (
                                      industrystd varchar(6) NOT NULL,
                                      industrystddesc varchar(30),
@@ -179,6 +212,8 @@ CREATE TABLE refdata_industrystd (
                                      statusid int default 1,
                                      PRIMARY KEY (industrystd)
 );
+
+drop table if exists refdata_industrystd_eventtypes;
 CREATE TABLE refdata_industrystd_eventtypes (
                                                 eventtypeid varchar(10) NOT NULL,
                                                 eventtypesddesc varchar(30),
@@ -187,6 +222,8 @@ CREATE TABLE refdata_industrystd_eventtypes (
                                                 statusid int default 1,
                                                 PRIMARY KEY (eventtypeid)
 );
+
+drop table if exists refdata_legalentities;
 CREATE TABLE refdata_legalentities (
                                        legalentityguid char(38) NOT NULL,
                                        locationname varchar(50),
@@ -201,6 +238,8 @@ CREATE TABLE refdata_legalentities (
                                        locationphone varchar(12),
                                        PRIMARY KEY (legalentityguid)
 );
+
+drop table if exists refdata_operationtype;
 CREATE TABLE refdata_operationtype (
                                        operationtypeid varchar(7) NOT NULL,
                                        operationtypename varchar(60),
@@ -208,6 +247,8 @@ CREATE TABLE refdata_operationtype (
                                        statusid int default 1,
                                        PRIMARY KEY (operationtypeid)
 );
+
+drop table if exists refdata_organization;
 CREATE TABLE refdata_organization (
                                       organizationguid char(38) NOT NULL,
                                       organizationinternalcode varchar(10),
@@ -220,19 +261,23 @@ CREATE TABLE refdata_organization (
                                       createduser varchar(20),
                                       statusid int default 1,
                                       createddate datetime DEFAULT (GETUTCDATE()),
-                                      legalentityguid varchar(38),
+                                      legalentityguid char(38),
                                       PRIMARY KEY (organizationguid)
 );
+
+drop table if exists refdata_professsiontypes;
 CREATE TABLE refdata_professiontypes (
-                                         professiontypeid IDENTITY(1,1) NOT NULL,
+                                         professiontypeid INT IDENTITY(1,1) NOT NULL,
                                          professiontypename varchar(65),
                                          createduser varchar(20),
                                          createddate datetime DEFAULT (GETUTCDATE()),
                                          statusid int default 1,
                                          PRIMARY KEY (professiontypeid)
 );
+
+drop table if exists refdata_regextypes;
 CREATE TABLE refdata_regextypes (
-                                    implregextypeid IDENTITY(1,1) NOT NULL,
+                                    implregextypeid INT IDENTITY(1,1) NOT NULL,
                                     regextypedesc varchar(69),
                                     createddate datetime DEFAULT (GETUTCDATE()),
                                     statusid int default 1,
@@ -240,8 +285,10 @@ CREATE TABLE refdata_regextypes (
                                     applicationid char(38),
                                     PRIMARY KEY (implregextypeid)
 );
+
+drop table if exists refdata_rulesets;
 CREATE TABLE refdata_rulesets (
-                                  ruleid IDENTITY(1,1) NOT NULL,
+                                  ruleid INT IDENTITY(1,1) NOT NULL,
                                   rulename varchar(65),
                                   createduser varchar(20),
                                   createddate datetime DEFAULT (GETUTCDATE()),
@@ -249,6 +296,8 @@ CREATE TABLE refdata_rulesets (
                                   expirationdate datetime,
                                   PRIMARY KEY (ruleid)
 );
+
+drop table if exists refdata_rulesetsdefinitions;
 CREATE TABLE refdata_rulesetsdefinitions (
                                              rulesetdefinitionsid char(38) NOT NULL,
                                              rulesetdefinitionname varchar(50),
@@ -264,22 +313,28 @@ CREATE TABLE refdata_rulesetsdefinitions (
                                              dataattributeid int,
                                              PRIMARY KEY (rulesetdefinitionsid)
 );
+
+drop table if exists refdata_sensitivityflag;
 CREATE TABLE refdata_sensitivityflag (
-                                         sensitiveflagid IDENTITY(1,1) NOT NULL,
+                                         sensitiveflagid INT IDENTITY(1,1) NOT NULL,
                                          sensitiveflagdesc varchar(30),
                                          createddate datetime DEFAULT (GETUTCDATE()),
                                          statusid int default 1,
                                          PRIMARY KEY (sensitiveflagid)
 );
+
+drop table if exists refdata_status;
 CREATE TABLE refdata_status (
-                                statusid IDENTITY(1,1) NOT NULL,
+                                statusid INT IDENTITY(1,1) NOT NULL,
                                 statusdescription varchar(45) NOT NULL,
                                 createddate datetime,
                                 createduser varchar(20),
                                 PRIMARY KEY (statusid)
 );
+
+drop table if exists refdata_terminologystd;
 CREATE TABLE refdata_terminologystd (
-                                        terminologystdid IDENTITY(1,1) NOT NULL,
+                                        terminologystdid INT IDENTITY(1,1) NOT NULL,
                                         terminologystd varchar(25) NOT NULL,
                                         terminologystdversion varchar(10) NOT NULL,
                                         terminologystddesc varchar(129),
@@ -287,6 +342,8 @@ CREATE TABLE refdata_terminologystd (
                                         statusid int default 1,
                                         PRIMARY KEY (terminologystdid)
 );
+
+drop table if exists refdata_timezones;
 CREATE TABLE refdata_timezones (
                                    timezonevalue varchar(3) NOT NULL,
                                    timezonedesc varchar(25),
@@ -294,6 +351,8 @@ CREATE TABLE refdata_timezones (
                                    statusid int default 1,
                                    PRIMARY KEY (timezonevalue)
 );
+
+drop table if exists refdata_usstates;
 CREATE TABLE refdata_usstates (
                                   stateid varchar(2) NOT NULL,
                                   statedescription varchar(65),
@@ -304,8 +363,10 @@ CREATE TABLE refdata_usstates (
                                   createduser varchar(20),
                                   PRIMARY KEY (stateid)
 );
+
+drop table if exists refdata_vendor;
 CREATE TABLE refdata_vendor (
-                                vendorid IDENTITY(1,1) NOT NULL,
+                                vendorid INT IDENTITY(1,1) NOT NULL,
                                 vendorname varchar(50),
                                 createddate datetime DEFAULT (GETUTCDATE()),
                                 statusid int default 1,
@@ -313,8 +374,10 @@ CREATE TABLE refdata_vendor (
                                 vendorguid char(38),
                                 PRIMARY KEY (vendorid)
 );
+
+drop table if exists terms_codeset_industrystd;
 CREATE TABLE terms_codeset_industrystd (
-                                           termcodesetid IDENTITY(1,1) NOT NULL,
+                                           termcodesetid INT IDENTITY(1,1) NOT NULL,
                                            codesetsid int NOT NULL,
                                            createddate datetime DEFAULT (GETUTCDATE()),
                                            statusid int default 1,
@@ -324,6 +387,7 @@ CREATE TABLE terms_codeset_industrystd (
                                            terminologystdid int,
                                            PRIMARY KEY (termcodesetid)
 );
+
 ALTER TABLE databuilt_datastructure
     ADD FOREIGN KEY (registeredapp)
         REFERENCES refdata_application (appguid);
